@@ -1,9 +1,8 @@
 <template>
-    <div data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true }'>
+
+    <div>
         <slot></slot>
     </div>
-
-
 
 </template>
 
@@ -19,26 +18,20 @@
                 default: true
             },
             autoplay: {
-                default: true
+                default: false
             }
         },
-
-        components: {
-            Flickity
-        },
-
-
 
         mounted() {
             new Flickity(this.$el, {
 
                 wrapAround: this.wraparound,
                 autoPlay: this.autoplay,
+                cellAlign: 'left',
+                contain: true
 
             });
         },
-
-
 
     }
 </script>
