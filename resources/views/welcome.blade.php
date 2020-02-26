@@ -12,7 +12,7 @@
 
     </head>
     <body>
-        <div id="app" class="mt-3">
+        <div id="app">
 
             <carousel>
                 <img src="https://placeimg.com/640/480/any">

@@ -1921,22 +1921,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  props: {
+    wraparound: {
+      "default": true
+    },
+    autoplay: {
+      "default": true
+    }
   },
-  components: [flickity__WEBPACK_IMPORTED_MODULE_0___default.a]
+  components: {
+    Flickity: flickity__WEBPACK_IMPORTED_MODULE_0___default.a
+  },
+  mounted: function mounted() {
+    new flickity__WEBPACK_IMPORTED_MODULE_0___default.a(this.$el, {
+      wrapAround: this.wraparound,
+      autoPlay: this.autoplay
+    });
+  }
 });
 
 /***/ }),
@@ -41781,31 +41785,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("Carousel Component")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c(
-              "div",
-              {
-                attrs: {
-                  "data-flickity":
-                    '{ "cellAlign": "left", "contain": true, "wrapAround": true }'
-                }
-              },
-              [_vm._t("default")],
-              2
-            )
-          ])
-        ])
-      ])
-    ])
-  ])
+  return _c(
+    "div",
+    {
+      attrs: {
+        "data-flickity":
+          '{ "cellAlign": "left", "contain": true, "wrapAround": true }'
+      }
+    },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
